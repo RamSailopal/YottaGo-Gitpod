@@ -7,7 +7,11 @@ func main() {
                 var err error
                 var errstr yottadb.BufferT
                 var tptoken uint64
-		err = yottadb.SetValE(tptoken, nil, "1", "^TEST", []string{"Testing"})
+		err = yottadb.SetValE(tptoken, nil, "Testing", "^TEST", []string{"1"})
 		resp, err := yottadb.ValE(tptoken, &errstr, "^TEST", []string{"1"})
-                fmt.Print(resp)
+                if err == nil {
+                        fmt.Print(resp, "\n")
+                } else {
+                        fmt.Print(err, "\n")
+                }
 }
