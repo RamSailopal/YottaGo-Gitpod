@@ -8,7 +8,7 @@ tasks:
     openMode: split-right
 
   - name: "Run command line"
-    command:  sleep 60 && docker exec -it yottadb bash -c "source /opt/yottadb/current/ydb_env_set && cd /home/gocode && bash"
+    command:  sleep 60 && docker exec -it yottadb bash -c "source /opt/yottadb/current/ydb_env_set && export PATH=$PATH:/usr/local/go/bin && cd /home/gocode && bash"
     openMode: split-right
 
 
